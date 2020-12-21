@@ -25,7 +25,7 @@ import javax.swing.event.MenuListener;
 
 
 public class MainFrame extends JFrame {
-
+//Zoom
 	private final int HEIGHT = 600;
 	private final int WIDTH = 600;
 	private boolean fileLoaded = false;
@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
 	private JMenuItem saveToTextMenuItem;
 	private JFileChooser fileChooser = null;
 	public MainFrame()  {
-		super("Вывод графика функции");
+		super("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 		setSize(WIDTH, HEIGHT);
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		setLocation((kit.getScreenSize().width - WIDTH)/2, (kit.getScreenSize().height - HEIGHT)/2);
@@ -46,9 +46,9 @@ public class MainFrame extends JFrame {
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		JMenu fileMenu = new JMenu("Файл");
+		JMenu fileMenu = new JMenu("пїЅпїЅпїЅпїЅ");
 		menuBar.add(fileMenu);
-		Action openGraphicsAction = new AbstractAction("Открыть файл", 
+		Action openGraphicsAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ", 
 				new ImageIcon(MainFrame.class.getResource("image/Open_files.png"))) {
 			
 			public void actionPerformed(ActionEvent arg0) {
@@ -63,7 +63,7 @@ public class MainFrame extends JFrame {
 		};
 		fileMenu.add(openGraphicsAction);
 		
-		Action saveToTextAction = new AbstractAction("Сохранить в .txt", 
+		Action saveToTextAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ .txt", 
 				new ImageIcon(MainFrame.class.getResource("image/Save.png"))) {
 			
 			@Override
@@ -79,10 +79,10 @@ public class MainFrame extends JFrame {
 		};
 		saveToTextMenuItem = fileMenu.add(saveToTextAction);
 		
-		JMenu graphicsMenu = new JMenu("График");
+		JMenu graphicsMenu = new JMenu("пїЅпїЅпїЅпїЅпїЅпїЅ");
 		menuBar.add(graphicsMenu);
 		
-		/*Action rotatesShapeClockAction = new AbstractAction("Повернуть по часовой стрелке") {
+		/*Action rotatesShapeClockAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ") {
 			
 			public void actionPerformed(ActionEvent e) {	
 				if(display.isClockRotate()){
@@ -96,7 +96,7 @@ public class MainFrame extends JFrame {
 		graphicsMenu.add(shapeRotateClockItem);
 		shapeRotateClockItem.setEnabled(false);*/
 		
-		Action rotatesShapeAntiClockAction = new AbstractAction("Повернуть ВЛЕВО") {
+		Action rotatesShapeAntiClockAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ") {
 			public void actionPerformed(ActionEvent e) {
 				if(display.isAntiClockRotate())
 				{
@@ -112,7 +112,7 @@ public class MainFrame extends JFrame {
 		shapeRotateAntiClockItem.setEnabled(false);
 		graphicsMenu.addSeparator();
 		
-		Action showAxisAction = new AbstractAction("Показать оси координат") {
+		Action showAxisAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ") {
 			public void actionPerformed(ActionEvent e) {
 				display.setShowAxis(showAxisMenuItem.isSelected());
 			}
@@ -122,7 +122,7 @@ public class MainFrame extends JFrame {
 		showAxisMenuItem.setSelected(true);
 		    
 		    
-		Action showMarkersAction = new AbstractAction("Показать маркеры точек") {
+		Action showMarkersAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ") {
 			
 			public void actionPerformed(ActionEvent e) {
 			display.setShowMarkers(showMarkersMenuItem.isSelected());	
@@ -133,7 +133,7 @@ public class MainFrame extends JFrame {
 		showMarkersMenuItem.setSelected(true);
 		graphicsMenu.addSeparator();
 		
-		Action resetGraphicsAction = new AbstractAction("Отменить все изменения") {
+		Action resetGraphicsAction = new AbstractAction("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ") {
 		      public void actionPerformed(ActionEvent event) {
 		        MainFrame.this.display.reset();
 		      }
