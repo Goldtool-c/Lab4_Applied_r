@@ -36,7 +36,8 @@ public class GraphicsDisplay extends JPanel {
 	private double maxX;
 	private double minY;
 	private double maxY;
-	
+	//zoom
+	//Exactly
 	private double scaleX;
 	private double scaleY;
 	
@@ -142,7 +143,7 @@ public class GraphicsDisplay extends JPanel {
 	protected void paintGrid (Graphics2D canvas) {
 		canvas.setStroke(gridStroke);
 		canvas.setColor(Color.GRAY);
-		// Сетка
+		// пїЅпїЅпїЅпїЅпїЅ
 		double pos = viewport[0][0];;
 		double step = (viewport[1][0] - viewport[0][0])/10;
 		
@@ -165,7 +166,7 @@ public class GraphicsDisplay extends JPanel {
 		canvas.setStroke(new BasicStroke(3f));
 	    canvas.setColor(Color.RED);
         //System.out.println(count);
-	    // Линии
+	    // пїЅпїЅпїЅпїЅпїЅ
 	    Double currentX = null;
 	    Double currentY = null;
         Double currentX1 = null;
@@ -346,7 +347,7 @@ public class GraphicsDisplay extends JPanel {
 
 	
 	protected void paintAxis(Graphics2D canvas){
-		// Оси
+		// пїЅпїЅпїЅ
 		canvas.setStroke(this.axisStroke);
 		canvas.setColor(java.awt.Color.BLACK);
 		canvas.setFont(this.axisFont);
@@ -387,7 +388,7 @@ public class GraphicsDisplay extends JPanel {
 
 
 	      
-			// Маркеры
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	        GeneralPath star = new GeneralPath();
 			Point2D.Double center = xyToPoint(point[0], point[1]);
 			if(isSpecialPoint(center.getX()))
@@ -472,7 +473,7 @@ public class GraphicsDisplay extends JPanel {
 
 
 	private void paintLabels(Graphics2D canvas){
-		// Подписи координат и сетки
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 		canvas.setColor(Color.BLACK);
 		canvas.setFont(this.labelsFont);
 		FontRenderContext context=canvas.getFontRenderContext();
@@ -527,7 +528,7 @@ public class GraphicsDisplay extends JPanel {
 		Color oldColor = canvas.getColor();
 		Font oldFont = canvas.getFont();
 		Paint oldPaint = canvas.getPaint();
-		/// поворот
+		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (clockRotate) {
 			AffineTransform at = AffineTransform.getRotateInstance(Math.PI/2, getSize().getWidth()/2, getSize().getHeight()/2); 
 			at.concatenate(new AffineTransform(getSize().getHeight()/getSize().getWidth(), 0.0, 0.0, getSize().getWidth()/getSize().getHeight(),
@@ -566,34 +567,34 @@ public class GraphicsDisplay extends JPanel {
 	    canvas.draw(selectionRect);
 	  }
 
-	// Устанавливаем значения по часовой стрелки
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public void setClockRotate(boolean clockRotate) {
 		this.clockRotate = clockRotate;
 		repaint();
 	}
 	
-	// Устанавливаем значения проив часовой стрелки
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public void setAntiClockRotate(boolean antiClockRotate) {
 		this.antiClockRotate = antiClockRotate;
 		repaint();
 	}
 	
-	// По часовой стрелке
+	// пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public boolean isClockRotate() {
 		return clockRotate;
 	}
 
-	// Поворот против часовой стрелки
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public boolean isAntiClockRotate() {
 		return antiClockRotate;
 	}
 	
-	// Сбрасываем изменения
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public void reset() {
 		showGraphics(this.originalData);
 	}
 	
-	//Приближаем
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	protected int findSelectedPoint(int x, int y)
 	  {
 	    if (graphicsData == null) return -1;
@@ -609,7 +610,7 @@ public class GraphicsDisplay extends JPanel {
 	 public void saveToTextFile(File selectedFile)	{
 			try{
 				PrintStream out = new PrintStream(selectedFile);
-				out.println("Результаты скорректированых значений");
+				out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 				for (Double[] point : graphicsData){
 					out.println(point[0] + " " + point[1]);
 				}
@@ -671,12 +672,12 @@ public class GraphicsDisplay extends JPanel {
 		    }
 		  }
 	 
-	 // Оброботчик движения мыши
+	 // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 	 public class MouseMotionHandler implements MouseMotionListener {
 	
 		 public void mouseDragged(MouseEvent ev) {
 			 if (changeMode) {
-				//Добавить поворот (при)
+				//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ)
 				 double[] currentPoint = translatePointToXY(ev.getX(), ev.getY());
 				 double newY = ((Double[])graphicsData.get(selectedMarker))[1].doubleValue() + 
 						 (currentPoint[1] - ((Double[])graphicsData.get(selectedMarker))[1].doubleValue());
@@ -702,7 +703,7 @@ public class GraphicsDisplay extends JPanel {
 	      }
 	}
 
-		 //перемещения мыши
+		 //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 	public void mouseMoved(MouseEvent ev) {
 		selectedMarker = findSelectedPoint(ev.getX(), ev.getY());
 	      if (selectedMarker >= 0)
